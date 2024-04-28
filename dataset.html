@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dataset</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>StrokeRehab</strong> Dataset</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>StrokeRehab Dataset</h1>
+									</header>
+
+									<p>Automatic action identification from video and kinematic data is an important machine learning problem with applications ranging from robotics to smart health. Most existing works focus on identifying coarse actions such as running, climbing, or cutting vegetables, which have relatively long durations and a complex series of motions. This is an important limitation for applications that require identification of more elemental motions at high temporal resolution.</p>
+
+									<span class="image left">
+										<img width="750" height="150" src="images/action_hierarchy.jpg" alt="" />
+									</span>
+
+									<p>Our goal is to address this limitation. To this end, we introduce a large-scale, multimodal dataset, <strong>StrokeRehab</strong>, as a new action-recognition benchmark that includes elemental shortduration actions labeled at a high temporal resolution. </p>
+									<p>StrokeRehab consists of high-quality inertial measurement unit sensor and video data of 51 stroke-impaired patients and 20 healthy subjects performing activities of daily living like feeding, brushing teeth, etc. Because it contains data from both healthy and impaired individuals, StrokeRehab can be used to study the influence of distribution shift in action-recognition tasks. </p>
+
+									<hr class="major" />
+
+									<h2>Clinical Motivation: Quantification of post-stroke rehabilitation</h2>
+									<p>Post-stroke recovery is often incomplete which necessitates rehabilitation. Rehabilitation involves repeatedly performing the functional primitives while peforming activities of daily living like brushing, combing, drinking, etc. <strong>The functional primitives are like building blocks of motion and there are five of them: Reach, Transport, Repostion, Stabilize and Idle</strong>. Below, you can see the examples of these functional primitives.</p>
+
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+											<!-- Break -->
+											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+										</div>
+									</div>
+
+
+									<p>Optimal dose of how many repetitions of these functional primitives should be performed by the patient is currently unknown. Some estimates suggest that we might be under-dosing our patients by a factor of 10. Current methods to quantify rehabilitation are either inaccurate (like using time in therapy) or accurate but slow and expensive (like hand tallying). Therefore, using the dataset, we aim to build a machine learning or deep learning model that helps the therapist to quantify the rehabilitation accurately, cheaply and quickly.</p>
+
+									<hr class="major" />
+
+									<h2>Dataset details</h2>
+									<p><strong>StrokeRehab</strong> consists of <strong>3,372 trials</strong> of rehabilitation activities performed by <strong>51 stroke-impaired and 20 healthy subjects</strong>. The dataset has <strong>44 hours of recorded training</strong> and labeled using 2700 (approx.) hours of manual effort with <strong>high inter-rate reliability</strong> (Cohen kappa > 0.96). The dataset has <strong>three cohorts: healthy subjects, mild and moderately impaired subjects and severely impaired subjects</strong>. Demographic details for each cohort can be seen in the table below.</p>
+									<span class="image object">
+										<img width="800" height="150" src="images/dataset_details_table_demo.jpg" alt="" />
+									</span>
+
+									<hr class="major" />
+
+									<p>StrokeRehab consists of 120,891 annotated actions (functional primitives), which is more than existing benchmark datasets.</p>
+
+									<span class="image object">
+										<img width="750" height="110" src="images/comparison_other_datasets.jpg" alt="" />
+									</span>
+
+									<hr class="major" />
+
+									<p>StrokeRehab synchronously captures <strong>two modalities:  Inertial Measurement Units (IMU) data and Video data.</strong></p>
+
+									<p><strong>IMU Data</strong>: Nine IMUs are attached to the upper body, specifically the cervical vertebra C7, the thoracic vertebra T12, the pelvis, and both arms, forearms, and hands which capture 3D linear accelerations and angular velocities at 100 Hz. These IMUs captured 76-dimensional kinematic features of 3D linear accelerations, 3D quaternions, and joint angles from the upper body. Angular velocities are converted to sensor-centric unit quaternions, representing the rotation of each sensor on its own axes, with coordinate transformation matrices</p>
+
+									<p><strong>Video Data</strong>: Video data were synchronously captured using two high definition cameras (1088 x 704, 60 frames per second or 100 frames per second; Ninox, Noraxon) placed orthogonally < 2 m from the subject. The video below shows an example capture of dataset. </p>
+
+									<span class="image main"><video width="640" height="480" controls> <source src="images/stroke_data_capture.mp4" type="video/mp4"> Your browser does not support the video tag. </video></span>
+
+									<hr class="major" />
+
+									<h2>Dataset access</h2>
+									<p>We have releaased the kinectic (IMU) dataset and video features on the <a href="https://simtk.org/plugins/datashare/index.php?group_id=2269&amp;amp;login=1#"> simTK platform</a>. One can freely create an account and access the dataset.</p>
+
+									<hr class="major" />
+
+									<p>For video, instead of releasing the raw videos, we have released the extracted features of the videos. We do so to protect the privacy of the subjects. We extract frame-wise features from the raw videos using the X3D model, a 3D convolutional network designed for video classification. The model is pretrained on the Kinetic dataset, which consists of coarse actions like running, climbing, sitting, etc. Since the StrokeRehab dataset consists of elemental, sub-second actions, we fine-tuned the X3D model on the training set of StrokeRehab. In order to fine-tune, we used video sequences as input and trained the model to identify the primitive happening in the center frame of the sequence</p>
+
+									<h2>Dataset citation</h2>
+
+									<p>If you would like to cite our paper/dataset, please do it as follows:</p>
+									<div class="box">
+										<code>@article{kaku2022strokerehab,title={StrokeRehab: A Benchmark Dataset for Sub-second Action Identification},author={Kaku, Aakash and Liu, Kangning and Parnandi, Avinash and Rajamohan, Haresh Rengaraj and Venkataramanan, Kannan and Venkatesan, Anita and Wirtanen, Audre and Pandit, Natasha and Schambra, Heidi and Fernandez-Granda, Carlos},journal={Advances in Neural Information Processing Systems},volume={35},pages={1671--1684},year={2022}}</code>
+									</div>
+
+										<!-- <pre><code>
+										
+										</code></pre> -->
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="dataset.html">Dataset</a></li>
+										<li><a href="code.html">Code</a></li>
+										<li><a href="demo.html">Demo</a></li>
+										<li><a href="related_research.html">Related research</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>If you have any questions or would like to contribute to the research, please contact us.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="Heidi.Schambra@nyulangone.org">Heidi.Schambra@nyulangone.org</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
